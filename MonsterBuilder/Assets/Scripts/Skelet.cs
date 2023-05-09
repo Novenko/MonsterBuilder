@@ -5,7 +5,7 @@ public class Skelet : MonoBehaviour
     private Vector2 _armsPos;
     private Vector2 _legsPos;
 
-    private float _armsRotation;
+    private Quaternion _armsRotation;
 
     public Vector2 armsPos
     {
@@ -17,7 +17,7 @@ public class Skelet : MonoBehaviour
         get { return _legsPos; }
         set { _legsPos = value; }
     }
-    public float armsRotation 
+    public Quaternion armsRotation 
     {
         get { return _armsRotation; }
         set { _armsRotation = value; }

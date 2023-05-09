@@ -12,6 +12,7 @@ public class SkeletManager : MonoBehaviour
     [Header("Skelet1")] 
     /////////////////////////////////////////////////
     [SerializeField] private Vector2 _skelet1Arms;
+    [SerializeField] private Quaternion _skelet1ArmsRotation;
     [SerializeField] private Vector2 _skelet1Legs;
     [SerializeField] private Vector2 _skelet1Eyes;
     [SerializeField] private Vector2 _skelet1Brow;
@@ -22,6 +23,7 @@ public class SkeletManager : MonoBehaviour
     [Header("Skelet2")]
     /////////////////////////////////////////////////
     [SerializeField] private Vector2 _skelet2Arms;
+    [SerializeField] private Quaternion _skelet2ArmsRotation;
     [SerializeField] private Vector2 _skelet2Legs;
     [SerializeField] private Vector2 _skelet2Eyes;
     [SerializeField] private Vector2 _skelet2Brow;
@@ -32,6 +34,7 @@ public class SkeletManager : MonoBehaviour
     [Header("Skelet3")]
     /////////////////////////////////////////////////
     [SerializeField] private Vector2 _skelet3Arms;
+    [SerializeField] private Quaternion _skelet3ArmsRotation;
     [SerializeField] private Vector2 _skelet3Legs;
     [SerializeField] private Vector2 _skelet3Eyes;
     [SerializeField] private Vector2 _skelet3Brow;
@@ -42,6 +45,7 @@ public class SkeletManager : MonoBehaviour
     [Header("Skelet3")]
     /////////////////////////////////////////////////
     [SerializeField] private Vector2 _skelet4Arms;
+    [SerializeField] private Quaternion _skelet4ArmsRotation;
     [SerializeField] private Vector2 _skelet4Legs;
     [SerializeField] private Vector2 _skelet4Eyes;
     [SerializeField] private Vector2 _skelet4Brow;
@@ -52,6 +56,7 @@ public class SkeletManager : MonoBehaviour
     [Header("Skelet4")]
     /////////////////////////////////////////////////
     [SerializeField] private Vector2 _skelet5Arms;
+    [SerializeField] private Quaternion _skelet5ArmsRotation;
     [SerializeField] private Vector2 _skelet5Legs;
     [SerializeField] private Vector2 _skelet5Eyes;
     [SerializeField] private Vector2 _skelet5Brow;
@@ -62,6 +67,7 @@ public class SkeletManager : MonoBehaviour
     [Header("Skelet5")]
     /////////////////////////////////////////////////
     [SerializeField] private Vector2 _skelet6Arms;
+    [SerializeField] private Quaternion _skelet6ArmsRotation;
     [SerializeField] private Vector2 _skelet6Legs;
     [SerializeField] private Vector2 _skelet6Eyes;
     [SerializeField] private Vector2 _skelet6Brow;
@@ -85,49 +91,49 @@ public class SkeletManager : MonoBehaviour
 
     private void InitSkelets() 
     {
-        
         /////////////////////////////////////////////////
         _skelets[0].armsPos = new Vector2(_skelet1Arms.x + _globalXposition, _skelet1Arms.y);
-        _skelets[0].armsRotation = 17.9f;
+        _skelets[0].armsRotation = _skelet1ArmsRotation;
 
         _skelets[0].legsPos = new Vector2(_skelet1Legs.x + _globalXposition, _skelet1Legs.y);
         /////////////////////////////////////////////////
         _skelets[1].armsPos = new Vector2(_skelet2Arms.x + _globalXposition, _skelet2Arms.y);
-        _skelets[1].armsRotation = 17.9f;
+        _skelets[1].armsRotation = _skelet2ArmsRotation;
 
         _skelets[1].legsPos = new Vector2(_skelet2Legs.x + _globalXposition, _skelet2Legs.y);
         /////////////////////////////////////////////////
         _skelets[2].armsPos = new Vector2(_skelet3Arms.x + _globalXposition, _skelet3Arms.y);
-        _skelets[2].armsRotation = 17.9f;
+        _skelets[2].armsRotation = _skelet3ArmsRotation;
 
         _skelets[2].legsPos = new Vector2(_skelet3Legs.x + _globalXposition, _skelet3Legs.y);
         /////////////////////////////////////////////////
         _skelets[3].armsPos = new Vector2(_skelet4Arms.x + _globalXposition, _skelet4Arms.y);
-        _skelets[3].armsRotation = 17.9f;
+        _skelets[3].armsRotation = _skelet4ArmsRotation;
 
         _skelets[3].legsPos = new Vector2(_skelet4Legs.x + _globalXposition, _skelet4Legs.y);
         /////////////////////////////////////////////////
         _skelets[4].armsPos = new Vector2(_skelet5Arms.x + _globalXposition, _skelet5Arms.y);
-        _skelets[4].armsRotation = 17.9f;
+        _skelets[4].armsRotation = _skelet5ArmsRotation;
 
         _skelets[4].legsPos = new Vector2(_skelet5Legs.x + _globalXposition, _skelet5Legs.y);
         /////////////////////////////////////////////////
         _skelets[5].armsPos = new Vector2(_skelet6Arms.x + _globalXposition, _skelet6Arms.y);
-        _skelets[5].armsRotation = 17.9f;
+        _skelets[5].armsRotation = _skelet6ArmsRotation;
 
         _skelets[5].legsPos = new Vector2(_skelet6Legs.x + _globalXposition, _skelet6Legs.y);
         /////////////////////////////////////////////////
     }
 
-    private void Update()
+    /*private void Update()
     {
         InitSkelets();
         ChangeSkelet(0);
-    }
+    }*/
 
     public void ChangeSkelet(int skeletIndex) 
     {
         _rightArm.transform.position = _skelets[skeletIndex].armsPos;
+        _rightArm.transform.rotation = _skelets[skeletIndex].armsRotation;
         _rightLeg.transform.position = _skelets[skeletIndex].legsPos;
     }
 }
