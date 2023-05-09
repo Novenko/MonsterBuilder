@@ -48,7 +48,7 @@ public class SkeletManager : MonoBehaviour
     [SerializeField] private Vector2 _skelet3Mouth;
     [SerializeField] private Vector2 _skelet3Nose;
     /////////////////////////////////////////////////
-    [Header("Skelet3")]
+    [Header("Skelet4")]
     /////////////////////////////////////////////////
     [SerializeField] private Vector2 _skelet4Arms;
     [SerializeField] private Quaternion _skelet4ArmsRotation;
@@ -59,7 +59,7 @@ public class SkeletManager : MonoBehaviour
     [SerializeField] private Vector2 _skelet4Mouth;
     [SerializeField] private Vector2 _skelet4Nose;
     /////////////////////////////////////////////////
-    [Header("Skelet4")]
+    [Header("Skelet5")]
     /////////////////////////////////////////////////
     [SerializeField] private Vector2 _skelet5Arms;
     [SerializeField] private Quaternion _skelet5ArmsRotation;
@@ -70,7 +70,7 @@ public class SkeletManager : MonoBehaviour
     [SerializeField] private Vector2 _skelet5Mouth;
     [SerializeField] private Vector2 _skelet5Nose;
     /////////////////////////////////////////////////
-    [Header("Skelet5")]
+    [Header("Skelet6")]
     /////////////////////////////////////////////////
     [SerializeField] private Vector2 _skelet6Arms;
     [SerializeField] private Quaternion _skelet6ArmsRotation;
@@ -93,6 +93,7 @@ public class SkeletManager : MonoBehaviour
         _skelets[5] = gameObject.AddComponent<Skelet>();
 
         InitSkelets();
+        ChangeSkelet(0);
     }
 
     private void InitSkelets() 
@@ -123,7 +124,7 @@ public class SkeletManager : MonoBehaviour
         _skelets[2].armsRotation = _skelet3ArmsRotation;
 
         _skelets[2].legsPos = new Vector2(_skelet3Legs.x + _globalXposition, _skelet3Legs.y);
-        _skelets[2].eyesPos = new Vector2(_skelet2Eyes.x + _globalXposition, _skelet3Eyes.y);
+        _skelets[2].eyesPos = new Vector2(_skelet3Eyes.x + _globalXposition, _skelet3Eyes.y);
         _skelets[2].browPos = new Vector2(_skelet3Brow.x + _globalXposition, _skelet3Brow.y);
         _skelets[2].earsPos = new Vector2(_skelet3Ears.x + _globalXposition, _skelet3Ears.y);
         _skelets[2].mouthPos = new Vector2(_skelet3Mouth.x + _globalXposition, _skelet3Mouth.y);
@@ -164,7 +165,7 @@ public class SkeletManager : MonoBehaviour
     private void Update()
     {
         InitSkelets();
-        ChangeSkelet(0);
+        ChangeSkelet(1);
     }
 
     public void ChangeSkelet(int skeletIndex) 
