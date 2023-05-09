@@ -161,16 +161,17 @@ public class SkeletManager : MonoBehaviour
         /////////////////////////////////////////////////
     }
 
-    /*private void Update()
+    private void Update()
     {
         InitSkelets();
         ChangeSkelet(0);
-    }*/
+    }
 
     public void ChangeSkelet(int skeletIndex) 
     {
         _rightArm.transform.position = _skelets[skeletIndex].armsPos;
         _rightArm.transform.rotation = _skelets[skeletIndex].armsRotation;
+        _rightLeg.transform.position = _skelets[skeletIndex].legsPos;
         _rightEye.transform.position = _skelets[skeletIndex].eyesPos;
         _rightBrow.transform.position = _skelets[skeletIndex].browPos;
         _rightEar.transform.position = _skelets[skeletIndex].earsPos;
