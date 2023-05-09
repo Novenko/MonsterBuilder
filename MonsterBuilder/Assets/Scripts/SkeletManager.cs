@@ -164,8 +164,8 @@ public class SkeletManager : MonoBehaviour
 
     private void Update()
     {
-        InitSkelets();
-        ChangeSkelet(1);
+/*        InitSkelets();
+        ChangeSkelet(1);*/
     }
 
     public void ChangeSkelet(int skeletIndex) 
