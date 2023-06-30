@@ -9,11 +9,6 @@ public class ContentPageManager : MonoBehaviour
 
     int currentPageID = 0;
 
-    void Update()
-    {
-        
-    }
-
     public void ChangePageNext()
     {
         pages[currentPageID].SetActive(false);
@@ -32,7 +27,7 @@ public class ContentPageManager : MonoBehaviour
         currentPageID--;
         if (currentPageID < 0)
         {
-            currentPageID = pages.Count;
+            currentPageID = pages.Count - 1;
         }
 
         pages[currentPageID].SetActive(true);
