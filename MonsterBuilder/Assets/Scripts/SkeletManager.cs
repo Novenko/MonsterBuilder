@@ -3,8 +3,9 @@ using UnityEngine;
 public class SkeletManager : MonoBehaviour
 {
     private Skelet[] _skelets = new Skelet[6];
+    private float _globalXposition;
 
-    [SerializeField] private float _globalXposition;
+    [SerializeField] private Transform _monsterTransform;
 
     [SerializeField] private GameObject _rightArm;
     [SerializeField] private GameObject _rightLeg;
@@ -85,6 +86,8 @@ public class SkeletManager : MonoBehaviour
 
     private void Awake()
     {
+        _globalXposition = _monsterTransform.position.x;
+
         _skelets[0] = gameObject.AddComponent<Skelet>();
         _skelets[1] = gameObject.AddComponent<Skelet>();
         _skelets[2] = gameObject.AddComponent<Skelet>();
